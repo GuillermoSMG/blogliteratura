@@ -17,12 +17,12 @@ const Navbar = () => {
 
   return (
     <header className='bg-green-600 flex items-center justify-between p-4'>
-      <a href='/'>
+      <Link to='/'>
         <h1 className='text-4xl text-white font-bold hidden md:block'>
           Rincón Literario
         </h1>
         <h1 className='text-3xl text-white font-bold block md:hidden'>RL</h1>
-      </a>
+      </Link>
       <button
         className='absolute top-4 right-4 md:hidden'
         onClick={closeMenu}
@@ -35,7 +35,7 @@ const Navbar = () => {
       </button>
       <nav
         ref={close}
-        className='md:mr-10 hidden md:flex md:block items-center'
+        className='md:mr-10 hidden md:block items-center'
       >
         <ul className='flex md:flex bg-black/60 py-[30vh] px-[2em] backdrop-blur-md gap-[2em] md:backdrop-blur-none md:bg-inherit md:p-0 text-white text-lg font-semibold flex-col md:flex-row fixed md:static md:top-auto top-0 md:right-auto right-0 bottom-0 md:bottom-auto left-1/3 md:left-auto'>
           <button
@@ -49,7 +49,10 @@ const Navbar = () => {
             />
           </button>
           {pages.map(page => (
-            <li key={page.label}>
+            <li
+              key={page.label}
+              onClick={closeMenu}
+            >
               <Link
                 to={page.link}
                 className='font-bold text-xl'

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { quinto } from '../articles/articulos';
+import Atras from './Atras';
 const Quinto = () => {
   return (
     <main>
+      <Atras url={'/'} />
       <h2>Quinto</h2>
       <ul>
         {quinto.map(article => (
